@@ -1,14 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe StaticPagesController, type: :controller do
-
-  describe "should get home" do 
-    it 
+describe 'Home' do
+  specify '画面の表示' do
+    visit '/
+    expect(page).to have_css('h1', text: 'Sample App')
   end
+end
 
-
-
-
-
-
+describe 'Help' do
+  specify '画面の表示' do
+    visit '/help'
+    expect(page).to have_css('h1', text: 'Help')
+  end
 end
